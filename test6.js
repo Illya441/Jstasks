@@ -2,36 +2,24 @@
 // Палиндром это когда строка читается слева-направо и справа-налево одинаково. 
 // Если строка палиндром функция возвращает true, иначе false.
 
-// Обычные полиндромы
-let string1 = "1234321";
-let string2 = "Аргентина манит негра";
-// Полиндром с учётом пробелов
-let string3 = "34543";
-let string4 = "Молоко делилилед околом"
-// Не палиндромы
-let string5 = "Лев с волком";
-let string6 = "Законы лжи";
-
-let count = 1;
+let string = prompt("введіть те що провірити");
+// let string = "Молоко делилиледоколом";
+// let string = "Молоко делилилед околом";
+let answer =confirm("OK - з пробілом \n CANCEL без пробіла");
 
 
 function isPalindrome(str) {
     // перевод в нижний регистр и удаление всех сибволов, кроме чисел от 0-9 и букв: украиского,русского и английского алфавита 
-    str = str.toLowerCase().replace(/[^a-zа-яёіїє0-9\s]/g, '');
-    
+    if(answer=true){
+        str = str.toLowerCase().replace(/[^a-zа-яёіїє0-9\s]/g, '');  
+    }else{
+        str = str.toLowerCase().replace(/[^a-zа-яёіїє0-9]/g, '');
+    }
     // Проверяем палиндром, сравнивая строку с её перевернутой версией
     // split - разбивает на массив символов
     // reverse - массив переворачивается
     // join - массив символов собирается обратно в строку
     return str === str.split('').reverse().join('');
 }
-
-console.log(`${count++}:${isPalindrome(string1)}`); 
-console.log(`${count++}:${isPalindrome(string2)}`); 
-console.log(`${count++}:${isPalindrome(string3)}`); 
-console.log(`${count++}:${isPalindrome(string4)}`); 
-console.log(`${count++}:${isPalindrome(string5)}`); 
-console.log(`${count++}:${isPalindrome(string6)}`); 
-
-
+alert(isPalindrome(string)); 
 
