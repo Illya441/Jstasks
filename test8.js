@@ -3,15 +3,18 @@ let blockProperty = {
     opacity: 0,
 };
 
-function editProperty(object,key,valye){
+function editProperty(object = {}, key = '', value = null) {
+
     // создаю новый объект с помощью оператора spread копирую свойства из исходного объект
-    let newObj= {...object};
+    let newObj = { ...object };
+
     // устанавливаю значение нового свойства.
-    newObj[key]=valye;
+    newObj[key] = value;
     return newObj;
 }
-console.log('blockProperty:',blockProperty);
-console.log('editProperty:',editProperty(blockProperty, 'color', 'red'));
+
+console.log('blockProperty:', blockProperty);
+console.log('editProperty:', editProperty(blockProperty, 'color', 'red'));
 
 
 

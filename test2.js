@@ -1,33 +1,43 @@
-// Завдання 2. Створити функцію яка буде приймати масив чисел та повертати тільки унікальні елементи масиву.
-// const numbers = [10, 25, 3, 8, 5, 25, 3, 2, 7, 8, 10];
-const numbers = [];
+/* Завдання 2. 
+Створити функцію яка буде приймати масив
+чисел та повертати тільки унікальні елементи масиву. */
 
-function getUniqueElements(num) {
+function getUniqueElements(nums = []) {
+
     // Перевірка, якщо масив порожній 
-    if (num.length === 0) {
-        return undefined;
+    if (nums.length === 0) {
+        throw "пустой масив";
     }
 
     // Створення нового масиву, в якому відсутні дублікати
     const uniqueArray = [];
-    num.forEach((item) => {
-      //для меня проверка, какое значение у числа 
-        console.log(`Число ${item} его значение: ${!uniqueArray.includes(item)}`);
-        // includes -  перевіряє, чи міститься поточний елемент item у масиві uniqueArray. Метод includes() повертає true, якщо масив містить елемент, та false, якщо не містить.
+    nums.forEach((num) => {
 
-        //"!" перед uniqueArray перевертає includes і він повертає false, якщо масив містить елемент, та true, якщо не містить.
-        if (!uniqueArray.includes(item)) {
+        //для меня проверка, какое значение у числа 
+        console.log(`Число ${num} его значение: ${!uniqueArray.includes(num)}`);
+
+        if (!uniqueArray.includes(num)) {
+
             //через push я добавляю ті елементи які  мають true тобто не мають дублікатів
-            uniqueArray.push(item);
+            uniqueArray.push(num);
         }
     });
 
     return uniqueArray;
 }
+try {
+    const numbers = [1, 1, 5, 7,];
+    const uniqueNumbers = getUniqueElements(numbers);
+    console.log(`num = [${numbers}]\n\nUniqueElements: ${uniqueNumbers}`);
+} catch (error) {
+    console.log("error:", error);
+}
 
-const uniqueNumbers = getUniqueElements(numbers);
-console.log(`num = [${numbers}]\n\nUniqueElements: ${uniqueNumbers}`);
 
 
+/* includes -  перевіряє, чи міститься поточний елемент item у масиві uniqueArray.
+Метод includes() повертає true, якщо масив містить елемент, та false, якщо не містить.
+"!" перед uniqueArray перевертає includes і він повертає false, 
+якщо масив містить елемент, та true, якщо не містить. */
 
 

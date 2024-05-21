@@ -2,24 +2,34 @@
 // Можно добавить в функцию второй параметр который будет 
 // говорить о том нужно ли учитывать пробелы или нет.
 
-let string = prompt("введіть те що провірити");
+
 // let string = "Молоко делилиледоколом";
-// let string = "Молоко делилилед околом";
-let answer =confirm("OK - з пробілом \n CANCEL без пробіла");
+let string = "Молоко делилилед околом";
+let string2 = "Аргентина манит негра";
+let answer = false;
 
+// true без пробела false с пробелом 
+function isPalindrome(str = '') {
 
-function isPalindrome(str) {
-    // перевод в нижний регистр и удаление всех сибволов, кроме чисел от 0-9 и букв: украиского,русского и английского алфавита 
-    if(answer=true){
-        str = str.toLowerCase().replace(/[^a-zа-яёіїє0-9\s]/g, '');  
-    }else{
-        str = str.toLowerCase().replace(/[^a-zа-яёіїє0-9]/g, '');
+    str = str.toLowerCase();
+
+    // удаление пробелов 
+    if (answer === true) {
+        str = str.split(' ').join('');
+        console.log("Без пробелов строка:", str);
     }
-    // Проверяем палиндром, сравнивая строку с её перевернутой версией
+
+    let reversedStr = str.split('').reverse().join('');
+
+    // проверка как перевораивается 
+    console.log("Перевернутая строка:", reversedStr);
+    return str === reversedStr;
+}
+
+console.log(isPalindrome(string));
+console.log(isPalindrome(string2));
+
+/*     // Проверяем палиндром, сравнивая строку с её перевернутой версией
     // split - разбивает на массив символов
     // reverse - массив переворачивается
-    // join - массив символов собирается обратно в строку
-    return str === str.split('').reverse().join('');
-}
-alert(isPalindrome(string)); 
-
+    // join - массив символов собирается обратно в строку */
