@@ -1,23 +1,18 @@
-/* 2) Написать функцию которая будет расчитывать число фибоначчи.
-Функция возвращает n-ную запись в определенной последовательности, причем n — число, 
-которое передается в качестве аргумента функции.
-
-Так, первые десять чисел выглядят следующим образом: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34.
-
-Пример:
-fibonacci(3)
-
-Результат:
-2 */
-
-
-function fibonacci(n) {
+/*  */
+function fibanachi(n) {
     // условие чтоб не было в отрицательных числах
     if (n === 0 || n === 1) {
         return n;
     } else {
-        // формула фибоначчи
-        return fibonacci(n - 1) + fibonacci(n - 2);
+        // формула фибоначи
+        return fibanachi(n - 1) + fibanachi(n - 2);
     }
 }
-console.log(fibonacci(3)); 
+
+// для вывода всех чисел
+function allFibanachiNumbers(n) {
+    for (i = 0; i <= n; i++) {
+        console.log(fibanachi(i));
+    }
+}
+allFibanachiNumbers(3)
