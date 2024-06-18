@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .show-img {
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .task6 {
+            max-width: 300px;
+            width: 100%;
+            display: flex;
+            height: 75px;
+
+            flex-direction: column;
+
+            button {
+                margin-top: auto;
+                margin-bottom: 10px;
+            }
+
+            h1 {
+                margin: 0;
+            }
+        }
+
+        .task9 {
+
+            table,
+            th,
+            td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+
+            th,
+            td {
+                padding: 5px;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="task6">
+        <h1 class="text" id="paragraf">Task 6</h1>
+        <button id="hideShowButton">Hide and Show</button>
+    </div>
+    <div class="task7">
+        <h1>Счётчик</h1>
+        <p id="counter" style="width: 100px;  border: 2px solid black; text-align: center;">0</p>
+        <button id="counterPlus">add 1 number</button>
+    </div>
+    <div class="task8" style="margin: 20px 0;">
+        <h1>Task 8</h1>
+        <button id="redButton">red</button>
+        <button id="blueButton">blue</button>
+        <button id="greenButton">green</button>
+        <button id="startColor">startColor</button>
+    </div>
+    <div class="task9">
+        <form id="tableForm">
+            <input type="text" id="name" placeholder="Name">
+            <input type="text" id="age" placeholder="Age">
+            <button type="button" id="addRowButton">Add Row</button>
+        </form>
+        <table id="table" style="margin: 5px auto; width: 200px; ">
+            <tr style="margin: auto; width: 100%; border: 1px solid black;">
+                <td>Name</td>
+                <td>Age</td>
+            </tr>
+        </table>
+    </div>
+    <div class="task10">
+        <div id="imageContainer">
+            <img class="show-img" id="images" src="" alt="Image">
+        </div>
+        <button id="prevButton">Previous</button>
+        <button id="nextButton">Next</button>
+    </div>
+    <script src="test14.js"></script>
+</body>
+
+</html>
