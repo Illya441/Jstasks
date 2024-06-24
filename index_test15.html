@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #randomObject {
+        width: 60px;
+        height: 60px;
+        background-color: red;
+        position: absolute;
+      /*   чтобы не было бага, при быстрой перезагруске страницы.
+        Квадрат смещался на начальную позицию а потом перемещался в рандомное место.
+        я вынес начальное его появление за видимую область */
+        left: -100px; 
+        top: -100px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="randomObject"></div>
+    <script src="test15.js"></script>
+</body>
+
+</html>
